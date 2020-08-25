@@ -1,0 +1,62 @@
+<template>
+    <section class="hero is-primary is-bold is-fullheight">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                VueJs Tutorial 1.0
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+ <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="row">
+            <div class="columns">
+              <div class="column is-half is-offset-one-quarter">
+                <TodoCard></TodoCard>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>
+              <strong>VueJS Tutorial</strong> by <a href="http://github.com/kessiacastro">Késsia Castro</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+</template>
+
+<script>
+  import TodoCard from './TodoCard';
+    export default {
+        name: "Agenda",
+        components: {
+          TodoCard
+        },
+        data(){
+            return{
+                msg: "Hello world"
+            }
+        },
+        methods:{
+
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>
