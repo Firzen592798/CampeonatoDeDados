@@ -13,7 +13,6 @@ import Tabela from "./components/Tabela"
 export default {
   name: 'app',
   components: {
-    //Agenda, 
     Tabela
   }
 }

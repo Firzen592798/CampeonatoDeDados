@@ -1,6 +1,6 @@
 <template>
 <div class="rodada">
-    Rodada {{rodada}}
+    <b>Rodada {{rodada}}</b>
     <tr>
         <td>
             <Partida ref="partida1" v-bind:p1="participantes[ordem[0]].nome" v-bind:p2="participantes[ordem[1]].nome" @processarPartida="processarPartida"></Partida>
@@ -21,7 +21,6 @@
             <Partida ref="partida4" v-bind:p1="participantes[ordem[6]].nome" v-bind:p2="participantes[ordem[7]].nome"  @processarPartida="processarPartida"></Partida>
         </td>
     </tr>
-    <br/>
 </div>
 </template>
 

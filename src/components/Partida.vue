@@ -86,7 +86,7 @@
         display: inline-block;
         width:  100px;
         text-align: right;
-        margin: 2px 5px 5px 0px;
+        margin: 2px 5px 5px 2px;
     }
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {

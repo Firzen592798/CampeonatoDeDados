@@ -1,0 +1,250 @@
+.main{
+    margin-left: 370px;
+    display: grid;
+    grid-template-areas: "divisao-atual tabela-divisoes"
+                          "classificacao dado-area"
+                          "editar-container auto";
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+}
+
+.tabela-jogos{
+    overflow-y: auto;
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    max-height: 100vh;    
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 10px;
+}
+
+.divisao-atual{
+    margin-top: 20px;
+    grid-area: divisao-atual
+}
+
+.divisao-atual>h1{
+    margin-left: 10px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    position: sticky;
+    left: 10px;
+}
+
+.divisao-atual .first-column{
+    position: sticky;
+    left: 0;
+}
+
+.tabela-divisoes{
+    margin-top: 54px;
+    display: inline-flex;
+    align-items: flex-start;
+    grid-area: tabela-divisoes
+
+}
+
+.classificacao {
+    grid-area: classificacao;
+    width: 550px;
+    display: flex;
+    gap: 20px;
+}
+
+.dado-area{
+    grid-area: dado-area
+}
+
+.dado{
+    display: inline-block;
+    font-size: 60px;
+    text-align: center;
+    width: 170px;
+    height: 170px;
+    border: 2px solid black; 
+    margin: 10px 0px;
+    vertical-align: middle;
+    line-height: 45px;
+    padding-top: 54px;
+}
+
+.d1{
+    background-image: url('./d1.svg')
+}
+.d2{
+    background-image: url('./d2.svg')
+}
+.d3{
+    background-image: url('./d3.svg')
+}
+.d4{
+    background-image: url('./d4.svg')
+}
+.d5{
+    background-image: url('./d5.svg')
+}
+.d6{
+    background-image: url('./d6.svg')
+}
+
+.dado-girando{
+    display: inline-block;
+    font-size: 60px;
+    text-align: center;
+    width: 170px;
+    height: 170px;
+    border: 2px solid black; 
+    margin: 10px 0px;
+    vertical-align: middle;
+    line-height: 45px;
+    padding-top: 54px;
+    background: red;
+}
+
+
+.tabela-jogos table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabela-divisoes > table{
+    width: 150px;
+}
+
+th, .main td {
+  text-align: left;
+  padding: 5px;
+}
+
+.divisao-atual td, .divisao-atual th{
+  min-width: 35px;
+  text-align: center !important;
+}
+
+
+.rodada{
+    padding-left: 10px;
+    margin: 10px 0px;
+}
+
+.main tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white !important;
+}
+
+.editar-container{
+  grid-area: editar-container;
+}
+
+
+.divisoes{
+    margin-left: 50px;
+    margin-top: 50px;
+    display: inline-flex;
+}
+
+.fa-angle-up{
+    color: springgreen;
+    font-size: 20px;
+}
+.fa-angle-down{
+    color: orangered;
+    font-size: 20px;
+}
+
+button{
+    font-size:30px;
+    background: bottom;
+    width: 170px;
+    padding: 10px;
+}
+
+.border-right{
+    border-right: 1px groove grey;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.input-participante{
+    width: 100px;
+}
+
+
+.column {
+    display: table-cell;
+    width: 100% !important;
+}
+
+.jogoAtual{
+    background: palegreen;
+}
+
+@media(max-width: 720px) {
+    .tabela-jogos{
+        display: none;
+    }
+
+    .main{
+        margin-left: initial;
+        display: grid;
+        grid-template-areas:"divisao-atual" 
+                            "dado-area"
+                            "classificacao"
+                            "tabela-divisoes"
+                            "editar-container";
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-columns: 100vw;
+        gap: 10px;
+    }
+
+    .classificacao, .divisao-atual,.tabela-divisoes{
+        overflow-x: scroll;
+    }
+
+    .classificacao{
+        flex-direction: column;
+        width: initial;
+    }
+
+    .classificacao table{
+      width: 100%;
+    }
+
+    .border-right{
+        border-right: 0;
+    }
+
+    .dado-container,.editar-container {
+        text-align: center;
+    }
+
+    ::-webkit-scrollbar {
+    width: initial;
+    }
+
+    ::-webkit-scrollbar-track {
+    box-shadow: initial; 
+    border-radius: initial;
+    }
+ 
+    .divisao-atual .first-column:not(th){
+        background-color: gainsboro;
+    }
+}

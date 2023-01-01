@@ -1,52 +1,50 @@
 <template>
-    <div class="tabela">
-    <div class="tabela-jogos">
-    <table>
-        <thead>
-           <th>Tabela jogos</th>
-        </thead>
-        <tbody>
-            <Rodada ref="rodada1"  :rodada="1"  v-bind:participantes="participantes" v-bind:ordem="[0, 1, 2, 3, 4, 5, 6, 7]"></Rodada>
-            <Rodada ref="rodada2"  :rodada="2"  v-bind:participantes="participantes" v-bind:ordem="[0, 2, 1, 3, 4, 6, 5, 7]"></Rodada>
-            <Rodada ref="rodada3"  :rodada="3"  v-bind:participantes="participantes" v-bind:ordem="[0, 3, 1, 2, 4, 7, 5, 6]"></Rodada>
-            <Rodada ref="rodada4"  :rodada="4"  v-bind:participantes="participantes" v-bind:ordem="[0, 4, 1, 5, 2, 6, 3, 7]"></Rodada>
-            <Rodada ref="rodada5"  :rodada="5"  v-bind:participantes="participantes" v-bind:ordem="[0, 5, 1, 4, 2, 7, 3, 6]"></Rodada>
-            <Rodada ref="rodada6"  :rodada="6"  v-bind:participantes="participantes" v-bind:ordem="[0, 6, 1, 7, 2, 4, 3, 5]"></Rodada>
-            <Rodada ref="rodada7"  :rodada="7"  v-bind:participantes="participantes" v-bind:ordem="[0, 7, 1, 6, 2, 5, 3, 4]"></Rodada>
-            <Rodada ref="rodada8"  :rodada="8"  v-bind:participantes="participantes" v-bind:ordem="[1, 0, 3, 2, 5, 4, 7, 6]"></Rodada>
-            <Rodada ref="rodada9"  :rodada="9"  v-bind:participantes="participantes" v-bind:ordem="[2, 0, 3, 1, 6, 4, 7, 5]"></Rodada>
-            <Rodada ref="rodada10" :rodada="10" v-bind:participantes="participantes" v-bind:ordem="[3, 0, 2, 1, 7, 4, 6, 5]"></Rodada>
-            <Rodada ref="rodada11" :rodada="11" v-bind:participantes="participantes" v-bind:ordem="[4, 0, 5, 1, 6, 2, 7, 3]"></Rodada>
-            <Rodada ref="rodada12" :rodada="12" v-bind:participantes="participantes" v-bind:ordem="[5, 0, 4, 1, 7, 2, 6, 3]"></Rodada>
-            <Rodada ref="rodada13" :rodada="13" v-bind:participantes="participantes" v-bind:ordem="[6, 0, 7, 1, 4, 2, 5, 3]"></Rodada>
-            <Rodada ref="rodada14" :rodada="14" v-bind:participantes="participantes" v-bind:ordem="[7, 0, 6, 1, 5, 2, 4, 3]"></Rodada>
-        </tbody>
-    </table>
-    </div>
-    <div class="grid">
-    <div class="classificacao row">
-        <div class="column" style="width: 600px !important;">
-        <h1 style="position: absolute; margin-top: -30px;">{{divisaoAtual}}º Divisão</h1>    
-        <table style="display: inline">
-            <thead>
-            <th>Rodadas</th>
-            <th v-for="n in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]" v-bind:key = n  v-bind:class="{'border-right': n==7}"> {{n}}º</th>
-            </thead>
-            <tbody>
-                <tr v-for="(participante, index) in participantes" v-bind:key="index" >
-                    <td>
-                        {{participante.nome}}
-                    </td>
-                    <td v-for="(pontuacao, index) in participante.acumulado" v-bind:class="{'border-right': index==6}" v-bind:key="index" > {{pontuacao}} </td>
-
-                </tr>
-            </tbody>
-        </table>
+    <div class="root">
+        <div class="tabela-jogos">
+            <table>
+                <thead>
+                <th>Tabela jogos</th>
+                </thead>
+                <tbody>
+                    <Rodada ref="rodada1"  :rodada="1"  v-bind:participantes="participantes" v-bind:ordem="[0, 1, 2, 3, 4, 5, 6, 7]"></Rodada>
+                    <Rodada ref="rodada2"  :rodada="2"  v-bind:participantes="participantes" v-bind:ordem="[0, 2, 1, 3, 4, 6, 5, 7]"></Rodada>
+                    <Rodada ref="rodada3"  :rodada="3"  v-bind:participantes="participantes" v-bind:ordem="[0, 3, 1, 2, 4, 7, 5, 6]"></Rodada>
+                    <Rodada ref="rodada4"  :rodada="4"  v-bind:participantes="participantes" v-bind:ordem="[0, 4, 1, 5, 2, 6, 3, 7]"></Rodada>
+                    <Rodada ref="rodada5"  :rodada="5"  v-bind:participantes="participantes" v-bind:ordem="[0, 5, 1, 4, 2, 7, 3, 6]"></Rodada>
+                    <Rodada ref="rodada6"  :rodada="6"  v-bind:participantes="participantes" v-bind:ordem="[0, 6, 1, 7, 2, 4, 3, 5]"></Rodada>
+                    <Rodada ref="rodada7"  :rodada="7"  v-bind:participantes="participantes" v-bind:ordem="[0, 7, 1, 6, 2, 5, 3, 4]"></Rodada>
+                    <Rodada ref="rodada8"  :rodada="8"  v-bind:participantes="participantes" v-bind:ordem="[1, 0, 3, 2, 5, 4, 7, 6]"></Rodada>
+                    <Rodada ref="rodada9"  :rodada="9"  v-bind:participantes="participantes" v-bind:ordem="[2, 0, 3, 1, 6, 4, 7, 5]"></Rodada>
+                    <Rodada ref="rodada10" :rodada="10" v-bind:participantes="participantes" v-bind:ordem="[3, 0, 2, 1, 7, 4, 6, 5]"></Rodada>
+                    <Rodada ref="rodada11" :rodada="11" v-bind:participantes="participantes" v-bind:ordem="[4, 0, 5, 1, 6, 2, 7, 3]"></Rodada>
+                    <Rodada ref="rodada12" :rodada="12" v-bind:participantes="participantes" v-bind:ordem="[5, 0, 4, 1, 7, 2, 6, 3]"></Rodada>
+                    <Rodada ref="rodada13" :rodada="13" v-bind:participantes="participantes" v-bind:ordem="[6, 0, 7, 1, 4, 2, 5, 3]"></Rodada>
+                    <Rodada ref="rodada14" :rodada="14" v-bind:participantes="participantes" v-bind:ordem="[7, 0, 6, 1, 5, 2, 4, 3]"></Rodada>
+                </tbody>
+            </table>
         </div>
+        <div class="main">
+            <div class="divisao-atual">
+                <h1>{{divisaoAtual}}º Divisão</h1>    
+                <table style="display: inline">
+                    <thead>
+                    <th class="first-column">Rodadas</th>
+                    <th v-for="n in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]" v-bind:key = n  v-bind:class="{'border-right': n==7}"> {{n}}º</th>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(participante, index) in participantes" v-bind:key="index" >
+                            <td class="first-column">
+                                {{participante.nome}}
+                            </td>
+                            <td v-for="(pontuacao, index) in participante.acumulado" v-bind:class="{'border-right': index==6}" v-bind:key="index" > {{pontuacao}} </td>
 
-        <div class="column">
-            <div class="divisoes">
-                <table v-for="d in [1, 2, 3, 4]" v-bind:key = d class="tabela-divisoes">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tabela-divisoes">
+                <table v-for="d in [1, 2, 3, 4]" v-bind:key = d>
                     <thead>
                     <th colspan=3>{{d}}º Divisão</th>
 
@@ -73,61 +71,52 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="column" style="width: 500px !important;">
-                <table style="width: 350px !important">
-                    <thead>
-                    <th width = 160px>Classificação</th>
-                    <th width = 70px>Pontos</th>
-                    <th width = 120px>Pontos fora</th>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(participante, index) in classificacaoOrdenada()" v-bind:key="index">
-                            <td>
-                                {{participante.nome}}
-                            </td>
-                            <td>
-                                {{participante.total}}
-                            </td>
-                            <td>
-                                {{participante.pontuacaoFora}}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        <div class="column">
-        <div style="display: table-row; height: 100px;">
-            <div class="dado-container">
-                <button v-if="!mostrarBotaoProximaDivisao" v-on:click="rolarJogada">Rolar dado</button>
-                <button v-if="mostrarBotaoProximaDivisao" v-on:click="processarNovaDivisao">Continuar</button>
-                <br/>
-            <div class="dado"> {{dado}}</div>
-            </div>
-            <div class="reservas-container" > 
-                <button style="width: 280px" v-on:click="toggleEditarParticipantes">
-                    {{editarParticipantes? 'OK' : 'Editar participantes'}} 
-                </button><br/>
-                <div class="reservas-form" v-if="editarParticipantes">
-                <span>
-                    <h1 style="margin-top: 5px; margin-bottom: 5px;">Reservas 
-                        <a style="margin: 0px 5px;" v-on:click="addReserva"> <i class="fa fa-plus-circle"></i> </a> 
-                        <a v-on:click="removeReserva"> <i class="fa fa-minus-circle"></i> </a></h1></span>
-                    <input v-for="(p, index) in reservas" v-bind:key = "index" class="input-participante" type="text" v-model="p.nome">
+
+                <div class="classificacao">
+                    <table>
+                        <thead>
+                        <th width = 160px>Classificação</th>
+                        <th width = 70px>Pontos</th>
+                        <th width = 120px>Pontos fora</th>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(participante, index) in classificacaoOrdenada()" v-bind:key="index">
+                                <td>
+                                    {{participante.nome}}
+                                </td>
+                                <td>
+                                    {{participante.total}}
+                                </td>
+                                <td>
+                                    {{participante.pontuacaoFora}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+                <div class="dado-area">
+                    <div class="dado-container">
+                        <button v-if="!mostrarBotaoProximaDivisao" v-on:click="rolarJogada">Rolar dado</button>
+                        <button v-if="mostrarBotaoProximaDivisao" v-on:click="processarNovaDivisao">Continuar</button>
+                        <br/>
+                        <div id="dado" class="dado"></div>
+                    </div>
+                </div>
+                <div class="editar-container" > 
+                    <button style="width: 280px" v-on:click="toggleEditarParticipantes">
+                        {{editarParticipantes? 'OK' : 'Editar participantes'}} 
+                    </button><br/>
+                    <div class="reservas-form" v-if="editarParticipantes">
+                        <span>
+                            <h1 style="margin-top: 5px; margin-bottom: 5px;">Reservas 
+                            <a style="margin: 0px 5px;" v-on:click="addReserva"> <i class="fa fa-plus-circle"></i> </a> 
+                            <a v-on:click="removeReserva"> <i class="fa fa-minus-circle"></i> </a></h1>
+                        </span>
+                        <input v-for="(p, index) in reservas" v-bind:key = "index" class="input-participante" type="text" v-model="p.nome">
+                    </div>
+                </div>
+            <br/>
         </div>
-        </div>
-        <!--<div class="dado-container">
-            <Participantes ></Participantes>
-        </div>-->
-        
-        </div>
-        
-        <br/>
-    </div>
     </div>
 </template>
 <script>
@@ -152,69 +141,62 @@
                 iniciado: false,
                 editarParticipantes: false,
                 participantes: [
-                    {"id": 1, "nome": "Goku", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
-                    {"id": 2, "nome": "Kirito", "pontuacao": [],"total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
-                    {"id": 3, "nome": "Naruto", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
-                    {"id": 4, "nome": "Ichigo", "pontuacao": [],"total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
-                    {"id": 5, "nome": "Eren", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
-                    {"id": 6, "nome": "Saitama", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
-                    {"id": 7, "nome": "Natsu", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
-                    {"id": 8, "nome": "Asta", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
+                    {"id": 1, "nome": "D1_Jogador1", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
+                    {"id": 2, "nome": "D1_Jogador2", "pontuacao": [],"total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
+                    {"id": 3, "nome": "D1_Jogador3", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
+                    {"id": 4, "nome": "D1_Jogador4", "pontuacao": [],"total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
+                    {"id": 5, "nome": "D1_Jogador5", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
+                    {"id": 6, "nome": "D1_Jogador6", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
+                    {"id": 7, "nome": "D1_Jogador7", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
+                    {"id": 8, "nome": "D1_Jogador8", "pontuacao": [], "total": 0, "pontuacaoFora": 0, "acumulado": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]},
                 ],
                 reservas: [
-                    { nome: "L" },
-                    { nome: "Eugeo" },
-                    { nome: "Ash" },
-                    { nome: "Killua" },
-                    { nome: "Tanjiro" },
-                    { nome: "Nezuko" },
-                    { nome: "Eugeo" },
-                    { nome: "Saber" },
-                    { nome: "Berserker" },
-                    { nome: "Kazuma" },
-                    { nome: "Bakugo" },
-                    { nome: "Aqua" },
+                    { nome: "Reserva1" },
+                    { nome: "Reserva2" },
+                    { nome: "Reserva3" },
+                    { nome: "Reserva4" },
                 ],
                 divisoes: [
                     {participantes: [
-                        {"nome": "Goku", "posicao": 0},
-                        {"nome": "Kirito", "posicao": 0},
-                        {"nome": "Naruto", "posicao": 0},
-                        {"nome": "Ichigo", "posicao": 0},
-                        {"nome": "Eren", "posicao": 0},
-                        {"nome": "Saitama", "posicao": 0},
-                        {"nome": "Natsu", "posicao": 0},
-                        {"nome": "Asta", "posicao": 0},
+                        {"nome": "D1_Jogador1", "posicao": 0},
+                        {"nome": "D1_Jogador2", "posicao": 0},
+                        {"nome": "D1_Jogador3", "posicao": 0},
+                        {"nome": "D1_Jogador4", "posicao": 0},
+                        {"nome": "D1_Jogador5", "posicao": 0},
+                        {"nome": "D1_Jogador6", "posicao": 0},
+                        {"nome": "D1_Jogador7", "posicao": 0},
+                        {"nome": "D1_Jogador8", "posicao": 0},
                     ]},
                     {participantes: [
-                        {"nome": "Vegeta", "posicao": 0},
-                        {"nome": "Sasuke", "posicao": 0},
-                        {"nome": "Senku", "posicao": 0},
-                        {"nome": "Genos", "posicao": 0},
-                        {"nome": "Armin", "posicao": 0},
-                        {"nome": "Gray", "posicao": 0},
-                        {"nome": "Yuno", "posicao": 0},
-                        {"nome": "Asuna", "posicao": 0},
+                        {"nome": "D2_Jogador1", "posicao": 0},
+                        {"nome": "D2_Jogador2", "posicao": 0},
+                        {"nome": "D2_Jogador3", "posicao": 0},
+                        {"nome": "D2_Jogador4", "posicao": 0},
+                        {"nome": "D2_Jogador5", "posicao": 0},
+                        {"nome": "D2_Jogador6", "posicao": 0},
+                        {"nome": "D2_Jogador7", "posicao": 0},
+                        {"nome": "D2_Jogador8", "posicao": 0},
                     ]},
                     {participantes: [
-                        {"nome": "Deku", "posicao": 0},
-                        {"nome": "Shinji", "posicao": 0},
-                        {"nome": "Seiya", "posicao": 0},
-                        {"nome": "Ash", "posicao": 0},
-                        {"nome": "Dio", "posicao": 0},
-                        {"nome": "Meliodas", "posicao": 0},
-                        {"nome": "Boruto", "posicao": 0},
-                        {"nome": "Issei", "posicao": 0},
+                        {"nome": "D3_Jogador1", "posicao": 0},
+                        {"nome": "D3_Jogador2", "posicao": 0},
+                        {"nome": "D3_Jogador3", "posicao": 0},
+                        {"nome": "D3_Jogador4", "posicao": 0},
+                        {"nome": "D3_Jogador5", "posicao": 0},
+                        {"nome": "D3_Jogador6", "posicao": 0},
+                        {"nome": "D3_Jogador7", "posicao": 0},
+                        {"nome": "D3_Jogador8", "posicao": 0},
                     ]},
+
                     { participantes: [
-                        {"nome": "Kaneki", "posicao": 0},
-                        {"nome": "Gon", "posicao": 0},
-                        {"nome": "Mikasa", "posicao": 0},
-                        {"nome": "Gohan", "posicao": 0},
-                        {"nome": "Zoro", "posicao": 0},
-                        {"nome": "Jiren", "posicao": 0},
-                        {"nome": "Todoroki", "posicao": 0},
-                        {"nome": "Tsukasa", "posicao": 0},
+                        {"nome": "D4_Jogador1", "posicao": 0},
+                        {"nome": "D4_Jogador2", "posicao": 0},
+                        {"nome": "D4_Jogador3", "posicao": 0},
+                        {"nome": "D4_Jogador4", "posicao": 0},
+                        {"nome": "D4_Jogador5", "posicao": 0},
+                        {"nome": "D4_Jogador6", "posicao": 0},
+                        {"nome": "D4_Jogador7", "posicao": 0},
+                        {"nome": "D4_Jogador8", "posicao": 0},
                     ]}
                 ]
             }
@@ -228,10 +210,33 @@
             } while (currentDate - date < milliseconds);
             },
 
-           rolarJogada(){
+            async criarSequenciaAnimacao(){
+                const dado = document.getElementById("dado")
+                const criarAnimacaoPasso = function(){
+                    dado.className = 'dado'
+                    let result = Math.floor(Math.random() * 6) + 1
+                    dado.classList.add('d'+result)
+                    return result
+                }
+                const delay = async function(ms) {
+                    return await new Promise(resolve => setTimeout(resolve, ms));
+                }
+                for(let i = 0; i < 6; i++){
+                    criarAnimacaoPasso()
+                    await delay(70);
+                }
+                return criarAnimacaoPasso()
+            },
+
+            async rolarDado(){
+                let valor = await this.criarSequenciaAnimacao();
+                return valor;
+            },
+
+           async rolarJogada(){
                //while(this.stop === false){
                     if(this.rodadaAtual < 15){
-                        this.dado = Math.floor(Math.random() * 6) + 1;
+                        this.dado = await this.rolarDado();
                         this.$refs["rodada" + this.rodadaAtual].enviarDado(this.dado, this.partidaAtual, this.jogadorAtual);
                         this.jogadorAtual = 3 - this.jogadorAtual;
                         if(this.jogadorAtual == 1){
@@ -383,7 +388,6 @@
         mounted() {
             if (localStorage.divisaoAtual) {
                 this.divisaoAtual = parseInt(localStorage.divisaoAtual);
-                //this.participantes = JSON.parse(localStorage.participantes) 
                 this.divisoes = JSON.parse(localStorage.divisoes);
                 this.reservas = JSON.parse(localStorage.reservas);
                 console.log(this.divisoes);
@@ -398,137 +402,8 @@
                     localStorage.divisoes = JSON.stringify(this.divisoes);
                     localStorage.reservas = JSON.stringify(this.reservas);
                 }
-                
+
             }
         }
     }
 </script>
-<style scoped>
-.tabela-jogos{
-    overflow-y: scroll;
-    position: absolute;
-    height: 100%;
-    bottom: 0;
-}
-
-.dado{
-    display: inline-block;
-    font-size: 60px;
-    text-align: center;
-    width: 170px;
-    height: 170px;
-    border: 2px solid black; 
-    margin: 10px 0px;
-    vertical-align: middle;
-    line-height: 45px;
-    padding-top: 54px;
-}
-
-.dado-girando{
-    display: inline-block;
-    font-size: 60px;
-    text-align: center;
-    width: 170px;
-    height: 170px;
-    border: 2px solid black; 
-    margin: 10px 0px;
-    vertical-align: middle;
-    line-height: 45px;
-    padding-top: 54px;
-    background: red;
-}
-
-
-.tabela{
-    display: flex; 
-    float: left;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-table.tabela-divisoes{
-    width: 150px;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-th {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.dado-container {
-    margin-left: -10%;
-    margin-top: 10%;
-    width: 50%; 
-    display: table-cell;
-    width: 200px;
-}
-
-.reservas-container{
-    display: table-cell;
-    width: 200px;
-}
-
-
-.divisoes{
-    margin-left: 50px;
-    margin-top: 50px;
-    display: inline-flex;
-}
-
-.fa-angle-up{
-    color: springgreen;
-    font-size: 20px;
-}
-.fa-angle-down{
-    color: orangered;
-    font-size: 20px;
-}
-
-button{
-    font-size:30px;
-    background: bottom;
-    width: 170px;
-    padding: 10px;
-}
-
-.border-right{
-    border-right: 1px groove grey;
-}
-
-h1{
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.input-participante{
-    width: 100px;
-}
-
-.row {
-    display: table;
-    width: 100%; /*Optional*/
-    table-layout: fixed; /*Optional*/
-    border-spacing: 10px; /*Optional*/
-}
-.column {
-    display: table-cell;
-    width: 100% !important;
-}
-.grid{
-    display: grid;
-    margin-left: 320px;
-}
-.jogoAtual{
-    background: palegreen;
-}
-</style>
