@@ -5,6 +5,8 @@
 
 Projeto front end feito em Vue.js com um intuito de rolar um campeoanto de 8 participantes usando um dado de 6 faces para representar os jogos. Projeto feito exclusivamente para praticar aspectos de reatividade e composição na tecnologia vue.js enquanto coloca em prática um antigo hobby
 
+![image](https://user-images.githubusercontent.com/1834518/210160151-3b23c789-e15a-4a37-8eb9-78bf643e2947.png)
+
 [Link para o projeto em execução](https://campeonatodedados.web.app/)
 
 ## Project setup
