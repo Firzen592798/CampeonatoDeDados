@@ -2,8 +2,12 @@
 
 
 ![vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
+![javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-Projeto front end feito em Vue.js com um intuito de rolar um campeoanto de 8 participantes usando um dado de 6 faces para representar os jogos. Projeto feito exclusivamente para praticar aspectos de reatividade e composição na tecnologia vue.js enquanto coloca em prática um antigo hobby. O projeto funciona numa tela de dispositivo móvel <br/>
+## Sobre
+
+Projeto front end feito em Vue.js com um intuito de rolar um campeoanto de 8 participantes usando um dado de 6 faces para representar os jogos. Projeto feito exclusivamente para praticar aspectos de reatividade e composição na tecnologia vue.js enquanto coloca em prática um antigo hobby. Utiliza bastante o grid system do css e media query para permitir o funcionamento em dispositivos móveis, e um pouco de javascript para executar a lógica do campeonato e as animações do dado <br/>
 
 [Link para o projeto em execução](https://campeonatodedados.web.app/)
 
@@ -18,6 +22,7 @@ Projeto front end feito em Vue.js com um intuito de rolar um campeoanto de 8 par
 ## Características
 <ul>
 <li>O sistema possui um sistema de 4 divisões com 8 participantes em que todos enfrentam todos, ida e volta. Os dois primeiros sobem e os dois últimos são rebaixados.
+<li>Após a rodada 7, ocorrem os jogos de volta. Antes da rodada 7, o primeiro a jogar no dado joga em casa. Depois da rodada 7, é o inverso</li>
 <li>Após acabar a primeira divisão, o jogo vai para a segunda divisão, depois para a terceira e quarta divisão e volta para a primeira divisão e assim sucessivamente</li>
 <li>Os rebaixados da quarta divisão podem ser substituídos por reservas. </li>
 <li>O navegador salva as informações do campeonato após a conclusão do campeonato de uma divisão </li>
